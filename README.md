@@ -118,9 +118,8 @@ Contributions are welcome! Please follow these steps:
 📞 Contact
 Naveed
 
-🌐 Personal Portfolio
-
-🐱 GitHub: @naveed-gung
+🌐 [Personal Portfolio](https://por-fo-lio.netlify.app/)
+🐱 GitHub: [@naveed-gung](https://github.com/naveed-gung)
 
 🌟 Support the Project
 
