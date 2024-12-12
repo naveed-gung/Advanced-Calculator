@@ -124,11 +124,13 @@ Naveed
 Help this project grow! Consider:
 
 ⭐ Star the Repository
+
 🍴 Fork and Contribute
+
 💡 Open Issues with Suggestions
+
 📣 Spread the Word
-Sponsor Options
-If you find value in this project, consider supporting its development:
+
 
 
 Made by Naveed
