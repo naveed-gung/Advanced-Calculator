@@ -155,5 +155,5 @@ Help this project grow! You can:
 
 ---
 
-**Made with ❤ by Naveed**
+**Made by Naveed**
 
