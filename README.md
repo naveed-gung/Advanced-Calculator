@@ -119,8 +119,11 @@ Contributions are welcome! Please follow these steps:
 Naveed
 
 🌐 Personal Portfolio
+
 🐱 GitHub: @naveed-gung
+
 🌟 Support the Project
+
 Help this project grow! Consider:
 
 ⭐ Star the Repository
