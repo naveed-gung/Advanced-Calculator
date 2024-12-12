@@ -105,13 +105,13 @@ An advanced, feature-rich online calculator designed for a modern, seamless expe
 ## 📸 Screenshots
 
 ### Default View
-![Default Theme](/screenshots/default-theme.png)
+![Default Theme](assets/images/screenshots/default-theme.png)
 
 ### Scientific Mode
-![Scientific Mode](/screenshots/scientific-mode.png)
+![Scientific Mode](assets/images/screenshots/scientific-mode.png)
 
 ### Custom Theme Creator
-![Theme Creator](/screenshots/theme-creator.png)
+![Theme Creator](assets/images/screenshots/theme-creator.png)
 
 ---
 
