@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced online calculator with themes, history, and scientific functions">
+    <meta name="keywords" content="calculator, online calculator, scientific calculator, math tools">
+    <meta name="author" content="Naveed">
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon/favicon.ico">
+    <link rel="manifest" href="/js/manifest.json">
+    
+    <title>Advanced Online Calculator </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <header class="hero-section">
+        <h1>Advanced<br>Calculator</h1>
+        <p class="subtitle">A powerful calculator with modern features</p>
+    </header>
+
+    <div class="calculator-wrapper">
+        <div class="container">
+            <div class="top-controls">
+                <button id="history-toggle" class="top-control-btn" aria-label="toggle history">
+                    <span>📋</span>
+                </button>
+                <button id="settings-toggle" class="top-control-btn" aria-label="toggle settings">
+                    <span>⚙️</span>
+                </button>
+            </div>
+            
+            <div class="calculator-inner">
+                <div class="calculator-front">
+                    <div class="memory-display">
+                        <span class="copy-icon" title="Copy to clipboard">📋</span>
+                        <span>M: <span id="memory-value">0</span></span>
+                    </div>
+                    <div class="calc-text">
+                        <span class="copy-icon input-copy" title="Copy to clipboard">📋</span>
+                        <p name="user-input" id="user-input" aria-label="calculator display">0</p>
+                    </div>
+                    <div class="scientific-buttons hidden">
+                        <button class="sci-btn" data-operation="sin">sin</button>
+                        <button class="sci-btn" data-operation="cos">cos</button>
+                        <button class="sci-btn" data-operation="tan">tan</button>
+                        <button class="sci-btn" data-operation="(">(</button>
+                        <button class="sci-btn" data-operation=")">)</button>
+                        <button class="sci-btn" data-operation="sqrt">√</button>
+                        <button class="sci-btn" data-operation="pow">^</button>
+                        <button class="sci-btn" data-operation="log">log</button>
+                        <button class="sci-btn" data-operation="ln">ln</button>
+                        <button class="sci-btn" data-operation="pi">π</button>
+                        <button class="sci-btn" data-operation="e">e</button>
+                        <button class="sci-btn" data-constant="GOLDEN_RATIO">φ</button>
+                        <button class="sci-btn" data-constant="PI">π</button>
+                        <button class="sci-btn" data-constant="E">e</button>
+                    </div>
+                    <div class="memory-buttons">
+                        <button class="memory-btn" id="mc">MC</button>
+                        <button class="memory-btn" id="mr">MR</button>
+                        <button class="memory-btn" id="m-plus">M+</button>
+                        <button class="memory-btn" id="m-minus">M-</button>
+                        <button class="memory-btn" id="ms">MS</button>
+                    </div>
+                    <div class="calc-keys">
+                        <button type="button" class="key-others operations" aria-label="clear all">AC</button>
+                        <button type="button" class="key-others operations" aria-label="delete">DEL</button>
+                        <button type="button" class="key-others operations" aria-label="percentage">%</button>
+                        <button type="button" class="key-operate operations" aria-label="divide">/</button>
+                        <button type="button" class="numbers" aria-label="number seven">7</button>
+                        <button type="button" class="numbers" aria-label="number eight">8</button>
+                        <button type="button" class="numbers" aria-label="number nine">9</button>
+                        <button type="button" class="key-operate operations" aria-label="multiply">*</button>
+                        <button type="button" class="numbers" aria-label="number four">4</button>
+                        <button type="button" class="numbers" aria-label="number five">5</button>
+                        <button type="button" class="numbers" aria-label="number six">6</button>
+                        <button type="button" class="key-operate operations" aria-label="subtract">-</button>
+                        <button type="button" class="numbers" aria-label="number one">1</button>
+                        <button type="button" class="numbers" aria-label="number two">2</button>
+                        <button type="button" class="numbers" aria-label="number three">3</button>
+                        <button type="button" class="key-operate operations" aria-label="add">+</button>
+                        <button type="button" class="key-zero numbers" aria-label="number zero">0</button>
+                        <button type="button" class="numbers" aria-label="decimal point">.</button>
+                        <button type="button" class="key-operate operations" aria-label="equals">=</button>
+                    </div>
+                </div>
+                <div class="calculator-back">
+                    <h3>History</h3>
+                    <ul id="calculation-history"></ul>
+                    <button id="export-history" class="export-btn">Export History</button>
+                </div>
+            </div>
+
+            <div class="settings-panel" id="settings-panel">
+                <h3>Settings</h3>
+                
+                <div class="setting-group">
+                    <label>Calculator Mode:</label>
+                    <select id="calculator-mode">
+                        <option value="basic">Basic</option>
+                        <option value="scientific">Scientific</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label>Theme:</label>
+                    <select id="theme-select">
+                        <option value="default">Default</option>
+                        <option value="dark">Dark</option>
+                        <option value="light">Light</option>
+                        <option value="neon">Neon</option>
+                        <option value="glass-blue">Glass Blue</option>
+                        <option value="glass-purple">Glass Purple</option>
+                        <option value="sunset">Sunset</option>
+                        <option value="ocean">Ocean</option>
+                        <option value="midnight">Midnight</option>
+                    </select>
+                </div>
+
+                <div class="setting-group theme-edu-group">
+                    <button id="create-theme" class="settings-btn">Create Theme</button>
+                    <div class="toggle-item">
+                        <label>Educational:</label>
+                        <input type="checkbox" id="educational-mode">
+                    </div>
+                </div>
+
+                <div class="setting-group input-toggles">
+                    <div class="toggle-item">
+                        <label>Sound:</label>
+                        <input type="checkbox" id="sound-toggle" checked>
+                    </div>
+                    
+                    <div class="toggle-item">
+                        <label>Keyboard:</label>
+                        <input type="checkbox" id="keyboard-toggle" checked>
+                    </div>
+                    
+                    <div class="toggle-item">
+                        <label>Auto Calc:</label>
+                        <input type="checkbox" id="auto-calculate">
+                    </div>
+                </div>
+                
+                <div class="setting-group">
+                    <label>Font Size:</label>
+                    <select id="font-size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+                
+                <div class="setting-group">
+                    <label>History Size:</label>
+                    <input type="number" id="history-size" min="5" max="50" value="10">
+                </div>
+                
+                <div class="setting-group">
+                    <label>Decimal Precision:</label>
+                    <input type="number" id="precision-input" min="0" max="10" value="8">
+                </div>
+            </div>
+
+            <div class="modal" id="theme-creator">
+                <div class="modal-content">
+                    <h3>Create Custom Theme</h3>
+                    <div class="theme-inputs">
+                        <div class="color-input">
+                            <label>Primary Color:</label>
+                            <input type="color" id="primary-color">
+                        </div>
+                        <div class="color-input">
+                            <label>Secondary Color:</label>
+                            <input type="color" id="secondary-color">
+                        </div>
+                        <div class="color-input">
+                            <label>Accent Color:</label>
+                            <input type="color" id="accent-color">
+                        </div>
+                        <div class="theme-name">
+                            <label>Theme Name:</label>
+                            <input type="text" id="theme-name" placeholder="My Custom Theme">
+                        </div>
+                    </div>
+                    <div class="theme-preview">
+                        <h4>Preview</h4>
+                        <div class="preview-calculator">
+                        </div>
+                    </div>
+                    <div class="modal-buttons">
+                        <button id="save-theme">Save Theme</button>
+                        <button id="cancel-theme">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <audio id="clickSound" src="assets/audio/click.mp3" preload="auto"></audio>
+            <audio id="errorSound" src="assets/audio/error.mp3" preload="auto"></audio>
+        </div>
+    </div>
+
+    <section class="features-grid">
+        <div class="feature-card">
+            <span class="feature-icon">🎨</span>
+            <h3>Multiple Themes</h3>
+            <p>Customize your calculator with various themes</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">📱</span>
+            <h3>Responsive Design</h3>
+            <p>Works perfectly on all devices</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">⚡</span>
+            <h3>Fast & Reliable</h3>
+            <p>Instant calculations with high precision</p>
+        </div>
+    </section>
+
+
+    <div class="formula-library">
+        <select id="formula-category">
+            <option value="basic-math">Choose a Category</option>
+        </select>
+        <div id="formula-display">
+            <h4>Selected Formula</h4>
+            <p class="formula-text">A = πr²</p>
+            <button class="use-formula">Use</button>
+        </div>
+    </div>
+
+    <div class="quick-notes">
+        <textarea id="calculation-notes" placeholder="Add notes about your calculations..."></textarea>
+        <div class="notes-controls">
+            <button id="save-notes">Save</button>
+            <button id="clear-notes">Clear</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">Created by Naveed</div>
+            <div class="social-links">
+                <a href="https://github.com/naveed-gung" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="github-icon" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+                    </svg>
+                </a>
+                <a href="https://por-fo-lio.netlify.app/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg class="portfolio-icon" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="math-facts">
+        <div class="fact-content">
+            <h4>Did you know?</h4>
+            <p id="current-fact">The sum of numbers from 1 to 100 is 5050.</p>
+        </div>
+        <div class="fact-controls">
+            <button class="next-fact">Next Fact →</button>
+        </div>
+    </div>
+</body>
+</html> 
