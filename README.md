@@ -63,44 +63,72 @@ Comprehensive formula reference:
 ## 🛠 Installation
 
 1. Clone the repository
-git clone https://github.com/your-username/advanced-calculator.git
-Open index.html in your browser
-🎮 Usage
-Basic Calculations: Simple arithmetic operations
-Scientific Mode: Advanced mathematical computations
-Memory Functions: Store and recall values
-Theme Switching: Change calculator appearance
-Formula Library: Quick access to mathematical formulas
-📸 Screenshots
-Default Theme
-Default Theme
+2. git clone https://github.com/your-username/advanced-calculator.git
+3. Open index.html in your browser
 
-Scientific Mode
-Scientific Mode
+## 🎮 Usage
 
-Custom Theme Creator
-Theme Creator
+### Basic Operations
+- **Simple Arithmetic**: Add, subtract, multiply, divide
+- **Percentage Calculations**
+- **Decimal Precision Control**
 
-🤝 Contributing
+### Advanced Features
+- **Scientific Mode**: Trigonometric, logarithmic, and advanced mathematical functions
+- **Memory Functions**
+  - Store current value
+  - Recall stored value
+  - Add/Subtract from memory
+- **Theme Customization**
+  - Multiple pre-built themes
+  - Custom theme creator
+- **Formula Library**
+  - Quick access to mathematical formulas
+  - Categories: Basic Math, Geometry, Algebra, Trigonometry
+
+### Keyboard Shortcuts
+- `Enter`: Calculate
+- `Escape`: Clear
+- `Backspace`: Delete last entry
+- `H`: Toggle History
+
+## 📸 Screenshots
+
+### Default Calculator View
+![Default Theme](/screenshots/default-theme.png)
+
+### Scientific Mode
+![Scientific Mode](/screenshots/scientific-mode.png)
+
+### Custom Theme Creator
+![Theme Creator](/screenshots/theme-creator.png)
+
+## 🤝 Contributing
+
+Contributions are warmly welcomed! Follow these steps:
+
 Contributions are welcome! Please follow these steps:
 
-Fork the repository
-Create your feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some AmazingFeature')
-Push to the branch (git push origin feature/AmazingFeature)
-Open a Pull Request
-🔒 License
-Distributed under the MIT License. See LICENSE for more information.
+1. Fork the repository
+2. Create your feature branch (git checkout -b feature/AmazingFeature)
+3. Commit your changes (git commit -m 'Add some AmazingFeature')
+4. Push to the branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
 
 📞 Contact
-Naveed - Portfolio GitHub: @naveed-gung
+Naveed
 
-🌟 Support
-If you find this project helpful, please consider:
+🌐 Personal Portfolio
+🐱 GitHub: @naveed-gung
+🌟 Support the Project
+Help this project grow! Consider:
 
-⭐ Starring the repository
-🍴 Forking the project
-💡 Suggesting improvements via issues
-Made with ❤️ by Naveed
+⭐ Star the Repository
+🍴 Fork and Contribute
+💡 Open Issues with Suggestions
+📣 Spread the Word
+Sponsor Options
+If you find value in this project, consider supporting its development:
 
-Visits Badge
+
+Made by Naveed
